@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Planning</title>
+  <link rel="stylesheet" href="../style/reset.css">
+  <script src="../page/index.js"></script>
+  <script src="svg-inject.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body onload="configurarHoraEDataHeader()">
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container-header">
+      <div class="menu">
+        <h1 class="title-menu">Planejamento Semanal</h1>
+        <p class="text-menu">Utilize o formulário para adicionar novas tarefas:</p>
+      </div>
+      <a href="" class="btn-style-um">Salvar localStorage</a>
+      <a href="" class="btn-style-dois">Excluir localStorage</a>
+      <div class="style-horario">
+      <div id="horarioHeader">
+      </div>
+      <div id="dataHeader">
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </header>
+
+  <!-- CONTAINER SCROLLBAR VERTICAL -->
+
+  <div class="container-scrollbar-vertical">
+    <div class="scrollbar-vertical">
+
+      <!-- FORMULÁRIO LOCALSTORAGE -->
+      <section class="section-atividade">
+
+        <!-- INPUT DESCRIÇÃO ATIVIDADE -->
+        <input type="text" name="valor" id="atividade-descricao" class="atividade-descricao" placeholder="Atividade">
+
+        <!-- SELECT DIAS DA SEMANA -->
+        <select class="weekday-select" aria-label="Dias da semana">
+          <option selected></option>
+          <option value="1">Segunda-feira</option>
+          <option value="2">Terça-feira</option>
+          <option value="3">Quarta-feira</option>
+          <option value="4">Quinta-feira</option>
+          <option value="5">Sexta-feira</option>
+          <option value="6">Sábado</option>
+          <option value="7">Domingo</option>
+        </select>
+
+        <!-- SELECT DE HORÁRIOS -->
+        <label for="appt"></label>
+        <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+
+        <!-- BOTÃO ADICIONAR ATIVIDADE -->
+        <a href="#"><button class="btn-adicionar-atividade" onclick="criarAtividade()"><img class="adicionar-atividade" src="../assets/img/icone-adicionar-atividade.svg" alt="Adcionar atividade"">Adicionar Atividade</button></a>
+
+        <!-- BOTÃO EXCLUIR ATIVIDADE -->
+        <a href=" #"><button class="btn-excluir-atividade" onclick="apagarPorDiaDaSemana()"><img class="excluir-atividade" src="../assets/img/icone-excluir-atividade.svg" alt="Excluir atividade">Excluir Todos</button></a>
+      </section>
+
+      <section class="flex-container">
+
+        <div class="container-timezone">
+          <p class="horario-timezone">Horário</p>
+        </div>
+
+        <!-- BOTÕES DIAS DA SEMANA -->
+        <div class="container-dias">
+          <a href="#"><button class="btn btn-segunda-feira" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Segunda-feira</button></a>
+          <a href="#"><button class="btn btn-terca-feira" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Terça-feira</button></a>
+          <a href="#"><button class="btn btn-quarta-feira" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Quarta-feira</button></a>
+          <a href="#"><button class="btn btn-quinta-feira" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Quinta-feira</button></a>
+          <a href="#"><button class="btn btn-sexta-feira" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Sexta-feira</button></a>
+          <a href="#"><button class="btn btn-sabado" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Sábado</button></a>
+          <a href="#"><button class="btn btn-domingo" onclick="buscarCardsPeloDiaDaSemanaViaBotao(this)">Domingo</button></a>
+        </div>
+      </section>
+
+      <section class="box-tarefas">
+
+        <div class="horarios horarios-conflito">
+        </div>
+
+        <div id="div-principal-tarefas" class="container-scrollbar-horizontal  Flipped">
+          <div class="scrollbar-horizontal">
+          </div>
+        </div>
+    </div>
+  </div>
+  </section>
+  <script src="../page/index.js"></script>
+</body>
+
+</html>
